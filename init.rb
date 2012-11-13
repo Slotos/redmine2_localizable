@@ -24,7 +24,7 @@ IssueStatus.send(:include, IssueStatusPatch)
 CustomField.send(:include, CustomFieldPatch)
 Enumeration.send(:include, EnumerationPatch)
 
-Redmine::Plugin.register :redmine2_localizable do
+Redmine::Plugin.register :"redmine2-localizable" do
   name "Localizable plugin"
   url "https://redmine.ociotec.com/projects/localizable"
   author "Emilio González Montaña"
@@ -37,5 +37,5 @@ Redmine::Plugin.register :redmine2_localizable do
                         "locales_to_translate" => [],
                         "locales" => {"tracker" => {},
                                       "issue_status" => {}}},
-           :partial => "settings/localizable")
+           :partial => "settings/redmine2_localizable")
 end
