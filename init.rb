@@ -8,6 +8,16 @@ end
 require "redmine"
 require "rubygems"
 
+# a bit of magic, models have no `name` methods prior to first instantiation
+# thus leading to error with aliasing
+# MAGIC start
+Role.new
+Tracker.new
+IssueStatus.new
+CustomField.new
+Enumeration.new
+# MAGIC end
+
 Role.send(:include, RolePatch)
 Tracker.send(:include, TrackerPatch)
 IssueStatus.send(:include, IssueStatusPatch)
