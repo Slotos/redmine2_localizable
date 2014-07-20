@@ -6,8 +6,8 @@ module Localizable
       Setting["plugin_redmine2_localizable"]["locales"] and
       Setting["plugin_redmine2_localizable"]["locales"][type] and
       Setting["plugin_redmine2_localizable"]["locales"][type][id.to_s] and
-      not Setting["plugin_redmine2_localizable"]["locales"][type][id.to_s][User.current.language.to_s].blank? and
-      value = Setting["plugin_redmine2_localizable"]["locales"][type][id.to_s][User.current.language.to_s]
+      not Setting["plugin_redmine2_localizable"]["locales"][type][id.to_s][I18n.locale].blank? and
+      value = Setting["plugin_redmine2_localizable"]["locales"][type][id.to_s][I18n.locale]
     return(value)
   end
 
